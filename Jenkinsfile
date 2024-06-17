@@ -5,7 +5,7 @@ pipeline {
         stage('Fetch from GitHub') { // build steps
             steps {
                 echo 'Fetching from GitHub'
-                git branch: 'main', url:'https://github.com/Leangkimlong/Laravel-jenkins.git'
+                git branch: 'main', url:'https://github.com/Leangkimlong/tester.git'
             }
         }
         stage('Install Composer') {

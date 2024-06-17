@@ -27,10 +27,14 @@ pipeline {
     }
     post {
         success {
-            sh 'curl -X POST -H "Content-Type: application/json" -d \'{"chat_id": "1125394926", "text": "[SUCCESS] Ukata api build success!", "disable_notification": false}\ "https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage"'
+            script {
+                sh 'curl -X POST -H "Content-Type: application/json" -d \'{"chat_id": "1125394926", "text": "[SUCCESS] Jenkins Build Successfully!", "disable_notification": false}\' "https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage"'
+            }
         }
-        failure {
-            sh 'curl -X POST -H "Content-Type: application/json" -d \'{"chat_id": "1125394926", "text": "[SUCCESS] Ukata api build success!", "disable_notification": false}\ "https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage"'
+        failure{
+            script {
+                sh 'curl -X POST -H "Content-Type: application/json" -d \'{"chat_id": "1983989639", "text": "[FAILED] Jenkins Build Unsuccessfully! Please check jenkins for more information.", "disable_notification": false}\' "https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage"'
+            }
         }
     }
 }

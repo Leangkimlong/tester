@@ -27,10 +27,10 @@ pipeline {
     }
     post {
         success {
-            sh 'curl -X POST -H "Content-Type: application/json" -d "{\"chat_id\": \"1125394926\", \"text\": \"Build success!\", \"disable_notification\": false}" https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage'
+            sh 'curl -X POST -H "Content-Type: application/json" -d \'{"chat_id": "1125394926", "text": "[SUCCESS] Ukata api build success!", "disable_notification": false}\ "https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage"'
         }
         failure {
-            sh 'curl -X POST -H "Content-Type: application/json" -d "{\"chat_id\": \"1125394926\", \"text\": \"Build fail!\", \"disable_notification\": false}" https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage'
+            sh 'curl -X POST -H "Content-Type: application/json" -d \'{"chat_id": "1125394926", "text": "[SUCCESS] Ukata api build success!", "disable_notification": false}\ "https://api.telegram.org/bot7111409725:AAHpjzugiaSmBHTo8dAJtTJBIfIZtsYHSUM/sendMessage"'
         }
     }
 }
